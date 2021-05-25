@@ -1,0 +1,14 @@
+{
+  "name": "chartjs-node-datalabels-repro",
+  "version": "1.0.0",
+  "description": "",
+  "engines": {
+    "node": "14.x"
+  },
+  "main": "app.js",
+  "dependencies": {
+    "chart.js": "^3.2.1",
+    "chartjs-node-canvas": "^3.2.0",
+    "chartjs-plugin-datalabels": ">= 2.0.0-rc.1"
+  }
+}
