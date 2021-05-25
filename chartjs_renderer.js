@@ -25,7 +25,6 @@ module.exports = class GraphRenderer {
           const chartCallback = (ChartJS) => {
             // ChartJS.unregister(ChartDataLabels);
             ChartJS.register(ChartDataLabels);
-            // ChartJS.defaults.plugins.datalabels.display = false
           };
 
           const chartJsFactory = () => {
@@ -34,15 +33,13 @@ module.exports = class GraphRenderer {
             require('chartjs-plugin-datalabels');
             delete require.cache[require.resolve('chart.js')];
             delete require.cache[require.resolve('chartjs-plugin-datalabels')];
-            // const ChartDataLabels = require('chartjs-plugin-datalabels');
-            // Chart.register(ChartDataLabels);
             return Chart;
           }
 
           // const chartJSNodeCanvas = new ChartJSNodeCanvas({ width: width, height: height, plugins: {requireChartJSLegacy: ['chartjs-plugin-datalabels']}});
-          const chartJSNodeCanvas = new ChartJSNodeCanvas({ width: width, height: height, chartCallback: chartCallback, chartJsFactory: chartJsFactory });
+          // const chartJSNodeCanvas = new ChartJSNodeCanvas({ width: width, height: height, chartCallback: chartCallback, chartJsFactory: chartJsFactory });
           // const chartJSNodeCanvas = new ChartJSNodeCanvas({ width: width, height: height, chartJsFactory: chartJsFactory });
-          // const chartJSNodeCanvas = new ChartJSNodeCanvas({ width: width, height: height, chartCallback: chartCallback })
+          const chartJSNodeCanvas = new ChartJSNodeCanvas({ width: width, height: height, chartCallback: chartCallback })
 
           chartJSNodeCanvas.registerFont('./assets/fonts/Roboto-Regular.ttf', { family: 'Roboto Regular' });
 
